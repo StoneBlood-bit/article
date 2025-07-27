@@ -19,8 +19,7 @@ public class ArticleServiceImpl implements ArticleService {
     private final ArticleRepository articleRepository;
 
     @Override
-    public ArticleResponseDto create(ArticleRequestDto requestDto) {
-        Article article = articleMapper.toEntity(requestDto);
+    public ArticleResponseDto create(ArticleRequestDto requestDto) {Article article = articleMapper.toEntity(requestDto);
         article.setPublicationDate(LocalDateTime.now());
         return articleMapper.toDto(articleRepository.save(article));
     }
