@@ -9,4 +9,6 @@ public interface ArticleService {
     ArticleResponseDto create(ArticleRequestDto requestDto);
 
     Page<ArticleResponseDto> findAll(Pageable pageable);
+
+    Long countArticlesLast7Days();
 }
