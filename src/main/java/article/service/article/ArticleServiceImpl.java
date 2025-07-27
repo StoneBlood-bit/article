@@ -33,8 +33,8 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public Long countArticlesLast7Days() {
-        return articleRepository.countByPublicationDateBetween(
-                LocalDateTime.now(), LocalDateTime.now().minusDays(COUNT_OF_DAYS)
+        return articleRepository.countArticlesFromLast7Days(
+                LocalDateTime.now().minusDays(COUNT_OF_DAYS)
         );
     }
 }
